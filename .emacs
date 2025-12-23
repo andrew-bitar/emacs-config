@@ -32,6 +32,24 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 
+;; Clang Format
+(require 'clang-format)
+(defun clang-format-save-hook-for-this-buffer ()
+  "Create a buffer local save hook."
+  (add-hook 'before-save-hook
+            (lambda ()
+              (when (locate-dominating-file "." ".clang-format")
+                (clang-format-buffer))
+              ;; Continue to save.
+              nil)
+            nil
+            ;; Buffer local hook.
+            t))
+
+;; Run this for each mode you want to use the hook.
+(add-hook 'c-mode-hook (lambda () (clang-format-save-hook-for-this-buffer)))
+(add-hook 'c++-mode-hook (lambda () (clang-format-save-hook-for-this-buffer)))
+
 ;; Magit shortcuts
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch)
@@ -58,6 +76,9 @@
 ;; turn on highlight matching brackets when cursor is on one
 (show-paren-mode 1)
 
+;; For traversing camelCase
+(subword-mode 1)
+
 ;; disable auto-backup
 (setq make-backup-files nil)
 
@@ -65,6 +86,19 @@
 
 (require 'llvm-mode)
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . llvm-mode))
+
+(require 'mlir-mode)
+(add-to-list 'auto-mode-alist '("\\.mlir\\'" . mlir-mode))
+
+(require 'tablegen-mode)
+(add-to-list 'auto-mode-alist '("\\.td\\'" . tablegen-mode))
+
+(require 'cmake-mode)
+
+(require 'yaml-mode)
+
+(require 'protobuf-mode)
+(add-to-list 'auto-mode-alist '("\\.pb\\'" . protobuf-mode))
 
 ;; Use Verilog syntax highlighting for .v.tmpl files
 (add-to-list 'auto-mode-alist '("\\.v.tmpl\\'" . verilog-mode))
@@ -104,7 +138,7 @@
 
 ;; Python settings
 (add-hook 'python-mode-hook '(lambda ()
-                               (setq python-indent 2)))
+                               (setq python-indent 4)))
 
 ;; Perl settings
 ;;(defalias 'perl-mode 'cperl-mode)
@@ -116,18 +150,28 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit ## zenburn-theme yasnippet undo-tree mic-paren hl-line+ highlight-symbol column-marker)))
+    (use-package python-black clang-format haskell-mode magit ## zenburn-theme yasnippet undo-tree mic-paren hl-line+ highlight-symbol column-marker)))
  '(perl-close-paren-offset -2)
  '(perl-indent-level 2)
  '(ps-paper-type (quote a4))
  '(ps-print-color-p nil)
  '(show-paren-mode t nil (paren)))
 
+
+;; The package is "python" but the mode is "python-mode":
+(use-package python
+  :mode ("\\.py\\'" . python-mode)
+  :interpreter ("python" . python-mode))
+
 ;; To run shell command
 (global-set-key (kbd "M-q") 'shell-command)
 
 ;; To open a new terminal buffer
 (global-set-key (kbd "C-c C-t") 'ansi-term)
+
+;;(global-set-key (kbd "M-[") nil)
+;;(global-set-key (kbd "C-[") nil)
+;;(global-set-key (kbd "C-M-[") nil)
 
 ;; scrolling line-by-line
 (global-set-key (quote [M-down]) (quote scroll-up-line))
@@ -143,10 +187,10 @@
 (global-set-key (quote [C-M-down])  (quote windmove-down))
 
 ;; Resizing windows
-(global-set-key (kbd "S-C-M-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-M-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-M-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-M-<up>") 'enlarge-window)
+(global-set-key (kbd "C-c C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-c C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "C-c C-<down>") 'shrink-window)
+(global-set-key (kbd "C-c C-<up>") 'enlarge-window)
 
 ;; Winner Mode: restoring window configurations
 (when (fboundp 'winner-mode)
@@ -275,3 +319,40 @@ one, an error is signaled."
     (if (match-string 1)
         (replace-match str2 t t)
       (replace-match str1 t t))))
+
+;; ITERM2 MOUSE SUPPORT
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t)
+  )
+
+;; Copy-Paste to/from OSX
+;;(defun copy-from-osx ()
+;;  (shell-command-to-string "pbpaste"))
+;;
+;;(defun paste-to-osx (text &optional push)
+;;  (let ((process-connection-type nil))
+;;    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+;;      (process-send-string proc text)
+;;      (process-send-eof proc))))
+;;
+;;(setq interprogram-cut-function 'paste-to-osx)
+;;(setq interprogram-paste-function 'copy-from-osx)
+
+;; Fix END key for Mac/iTerm2
+(define-key input-decode-map "\e[4~" 'end-of-line)
+(global-set-key (kbd "\e[4~") 'end-of-line)
+
+;; Cycle between snake case, camel case, etc.
+(require 'string-inflection)
+(global-set-key (kbd "C-c i") 'string-inflection-cycle)
+(global-set-key (kbd "C-c C") 'string-inflection-camelcase)        ;; Force to CamelCase
+(global-set-key (kbd "C-c L") 'string-inflection-lower-camelcase)  ;; Force to lowerCamelCase
+(global-set-key (kbd "C-c U") 'string-inflection-underscore)  ;; Force to under_score
+(global-set-key (kbd "C-c A") 'string-inflection-upcase) ;; Force to CAPITAL_UNDER_SCORE
+;;(global-set-key (kbd "C-c J") 'string-inflection-java-style-cycle) ;; Cycle through Java styles
+
+;; Very large files
+(require 'vlf-setup)
