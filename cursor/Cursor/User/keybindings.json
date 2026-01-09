@@ -1,0 +1,539 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
+    },
+    {
+        "key": "ctrl",
+        "command": "workbench.action.keys.sendKey",
+        "args": "cmd"
+    },
+    {
+        "key": "cmd",
+        "command": "workbench.action.keys.sendKey",
+        "args": "ctrl"
+    },
+    {
+        "key": "ctrl+x ctrl+f",
+        "command": "workbench.action.files.openFile",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "false"
+    },
+    {
+        "key": "ctrl+x ctrl+f",
+        "command": "-workbench.action.quickOpen",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-cursorWordPartRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "-cursorWordPartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+x b",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+x b",
+        "command": "-workbench.action.showAllEditorsByMostRecentlyUsed",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+cmd+pageup",
+        "command": "-workbench.action.terminal.scrollUp",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+cmd+pagedown",
+        "command": "-workbench.action.terminal.scrollDown",
+        "when": "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+up",
+        "command": "scrollLineUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-scrollLineUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "scrollLineDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-scrollLineDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+c r",
+        "command": "workbench.action.files.revert"
+    },
+    {
+        "key": "ctrl+x g",
+        "command": "magit.status"
+    },
+    {
+        "key": "alt+x g",
+        "command": "-magit.status"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "actions.findWithSelection",
+        "when": "findInputFocussed"
+    },
+    {
+        "key": "cmd+e",
+        "command": "-actions.findWithSelection"
+    },
+    {
+        "key": "ctrl+x ctrl+g",
+        "command": "magit.dispatch"
+    },
+    {
+        "key": "alt+x ctrl+g",
+        "command": "-magit.dispatch"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-emacs-mcx.moveBeginningOfLine",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-emacs-mcx.moveBeginningOfLine",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-cursorLineStart",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-emacs-mcx.isearchExit",
+        "when": "editorFocus && findWidgetVisible && !config.emacs-mcx.cursorMoveOnFindWidget && !isComposing && !replaceInputFocussed"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.acceptCursorTabSuggestion",
+        "when": "cpp.shouldAcceptTab"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.acceptCursorTabSuggestion",
+        "when": "cpp.shouldAcceptTab"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.acceptGPT4",
+        "when": "hasGPT4Diff"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.acceptGPT4",
+        "when": "hasGPT4Diff"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.inlineDiffs.acceptAll",
+        "when": "editorTextFocus && @inlineDiffs.acceptAllEdits.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-editor.action.inlineDiffs.acceptAll",
+        "when": "editorTextFocus && @inlineDiffs.acceptAllEdits.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.inlineDiffs.acceptAllAcrossAllEditors",
+        "when": "editorHasPromptBar && editorTextFocus || editorTextFocus && hasDisplayedDiff"
+    },
+    {
+        "key": "cmd+pausebreak",
+        "command": "-editor.action.inlineDiffs.acceptAllAcrossAllEditors",
+        "when": "editorHasPromptBar && editorTextFocus || editorTextFocus && hasDisplayedDiff"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.accessibleViewAcceptInlineCompletion",
+        "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+    },
+    {
+        "key": "ctrl+/",
+        "command": "-editor.action.accessibleViewAcceptInlineCompletion",
+        "when": "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.inlineSuggest.acceptNextWord",
+        "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "cmd+right",
+        "command": "-editor.action.inlineSuggest.acceptNextWord",
+        "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.inlineDiffs.acceptPartialEdit",
+        "when": "editorTextFocus && @inlineDiffs.acceptPartialEdit.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "cmd+y",
+        "command": "-editor.action.inlineDiffs.acceptPartialEdit",
+        "when": "editorTextFocus && @inlineDiffs.acceptPartialEdit.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.simpleInlineDiffs.acceptAll",
+        "when": "editorTextFocus && hasDisplayedSimpleDiff"
+    },
+    {
+        "key": "cmd+g",
+        "command": "-editor.action.simpleInlineDiffs.acceptAll",
+        "when": "editorTextFocus && hasDisplayedSimpleDiff"
+    },
+    {
+        "key": "ctrl+home",
+        "command": "cursorTop",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+up",
+        "command": "-cursorTop",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+end",
+        "command": "cursorBottom",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "cmd+down",
+        "command": "-cursorBottom",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "macros.selectForwardParagraph",
+        "when": "editorTextFocus && !editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "macros.selectBackwardParagraph",
+        "when": "editorTextFocus && !editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "macros.selectForwardWord",
+        "when": "editorTextFocus && !editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "macros.selectBackwardWord",
+        "when": "editorTextFocus && !editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "macros.continueSelectForwardParagraph",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "macros.continueSelectBackwardParagraph",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "macros.continueSelectForwardWord",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "macros.continueSelectBackwardWord",
+        "when": "editorTextFocus && editorHasSelection"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineDiffs.cancelEdits",
+        "when": "editorTextFocus && hasActivelyGeneratingDiff"
+    },
+    {
+        "key": "shift+cmd+backspace",
+        "command": "-editor.action.inlineDiffs.cancelEdits",
+        "when": "editorTextFocus && hasActivelyGeneratingDiff"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineDiffs.cancelPromptBar",
+        "when": "editorTextFocus && hasActivelyGeneratingPromptBarDiff"
+    },
+    {
+        "key": "cmd+backspace",
+        "command": "-editor.action.inlineDiffs.cancelPromptBar",
+        "when": "editorTextFocus && hasActivelyGeneratingPromptBarDiff"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.cancelGPT4WithCmdDelete",
+        "when": "hadGPT4InlineCompletionRunning"
+    },
+    {
+        "key": "cmd+backspace",
+        "command": "-editor.action.cancelGPT4WithCmdDelete",
+        "when": "hadGPT4InlineCompletionRunning"
+    },
+    {
+        "key": "escape",
+        "command": "-editor.action.cancelGPT4WithCmdDelete",
+        "when": "hadGPT4InlineCompletionRunning"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.simpleInlineDiffs.rejectAll",
+        "when": "editorTextFocus && hasDisplayedSimpleDiff"
+    },
+    {
+        "key": "cmd+h",
+        "command": "-editor.action.simpleInlineDiffs.rejectAll",
+        "when": "editorTextFocus && hasDisplayedSimpleDiff"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineDiffs.rejectPartialEdit",
+        "when": "editorTextFocus && @inlineDiffs.rejectPartialEdit.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-editor.action.inlineDiffs.rejectPartialEdit",
+        "when": "editorTextFocus && @inlineDiffs.rejectPartialEdit.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineDiffs.rejectAll",
+        "when": "editorTextFocus && @inlineDiffs.rejectAllEdits.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "shift+cmd+backspace",
+        "command": "-editor.action.inlineDiffs.rejectAll",
+        "when": "editorTextFocus && @inlineDiffs.rejectAllEdits.isActiveEditorWithDiffs"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineDiffs.rejectAllAcrossAllEditors",
+        "when": "editorHasPromptBar && editorTextFocus || editorTextFocus && hasDisplayedDiff"
+    },
+    {
+        "key": "cmd+ctrl",
+        "command": "-editor.action.inlineDiffs.rejectAllAcrossAllEditors",
+        "when": "editorHasPromptBar && editorTextFocus || editorTextFocus && hasDisplayedDiff"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.rejectGPT4",
+        "when": "editorTextFocus && hasGPT4Diff"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-editor.action.rejectGPT4",
+        "when": "editorTextFocus && hasGPT4Diff"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.rejectPartialGPT4"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.inlineSuggest.hide",
+        "when": "inlineEditIsVisible || inlineSuggestionVisible"
+    },
+    {
+        "key": "escape",
+        "command": "-editor.action.inlineSuggest.hide",
+        "when": "inlineEditIsVisible || inlineSuggestionVisible"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "escape",
+        "command": "-hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "escape",
+        "command": "-hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.terminal.chat.close",
+        "when": "terminalChatFocus && terminalChatVisible || terminalChatVisible && terminalFocus"
+    },
+    {
+        "key": "escape",
+        "command": "-workbench.action.terminal.chat.close",
+        "when": "terminalChatFocus && terminalChatVisible || terminalChatVisible && terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "history.showPrevious",
+        "when": "historyNavigationBackwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+c shift+,",
+        "command": "outdent",
+        "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+    },
+    {
+        "key": "ctrl+c shift+.",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+c ctrl+down",
+        "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+c ctrl+left",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+c ctrl+right",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+c ctrl+up",
+        "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-file-browser.actions",
+        "when": "inFileBrowser"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "-cursorLineStartSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "amp.agent.focusPromptEditor"
+    },
+    {
+        "key": "tab",
+        "command": "emacs-tab.reindentCurrentLine",
+        "when": "editorTextFocus && editorLangId == cpp"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "cursor.toggleAgentWindowIDEUnification",
+        "when": "cursor.agentIdeUnification.featureGate && workbenchState != 'empty'"
+    },
+    {
+        "key": "cmd+e",
+        "command": "-cursor.toggleAgentWindowIDEUnification",
+        "when": "cursor.agentIdeUnification.featureGate && workbenchState != 'empty'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "editor.action.toggleScreenReaderAccessibilityMode",
+        "when": "accessibilityHelpIsShown"
+    },
+    {
+        "key": "cmd+e",
+        "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+        "when": "accessibilityHelpIsShown"
+    }
+]

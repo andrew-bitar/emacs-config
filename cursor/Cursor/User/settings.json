@@ -1,0 +1,103 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Monokai",
+    "files.hotExit": "off",
+    "trailing-spaces.deleteModifiedLinesOnly": true,
+    "trailing-spaces.trimOnSave": true,
+    "files.trimFinalNewlines": true,
+    "workbench.editor.showTabs": "single",
+    "emacs-mcx.paredit.parentheses": {
+        "[": "]",
+        "(": ")",
+        "{": "}"
+    },
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.wordWrap": "on",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.wordWrap",
+        "clang-format.language.cpp.fallbackStyle",
+        "C_Cpp.vcFormat.indent.multiLineRelativeTo",
+        "emacs-mcx.emacsLikeTab"
+    ],
+    "macros.list": {
+        "selectForwardParagraph": [
+            "emacs-mcx.setMarkCommand",
+            "emacs-mcx.forwardParagraph"
+        ],
+        "selectBackwardParagraph": [
+            "emacs-mcx.setMarkCommand",
+            "emacs-mcx.backwardParagraph"
+        ],
+        "selectForwardWord": [
+            "emacs-mcx.setMarkCommand",
+            "emacs-mcx.forwardWord"
+        ],
+        "selectBackwardWord": [
+            "emacs-mcx.setMarkCommand",
+            "emacs-mcx.backwardWord"
+        ],
+        "continueSelectForwardParagraph": [
+            "emacs-mcx.forwardParagraph"
+        ],
+        "continueSelectBackwardParagraph": [
+            "emacs-mcx.backwardParagraph"
+        ],
+        "continueSelectForwardWord": [
+            "emacs-mcx.forwardWord"
+        ],
+        "continueSelectBackwardWord": [
+            "emacs-mcx.backwardWord"
+        ],
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "[cpp]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "xaver.clang-format",
+        "editor.detectIndentation": false,
+    },
+    "amp.url": "https://ampcode.com/",
+    "emacs-mcx.emacsLikeTab": true,
+    "amp.commands.allowlist": [
+        "sed",
+        "sed",
+        "sort",
+        "uniq",
+        "python3"
+    ],
+    "amp.permissions": [
+        {
+            "tool": "Bash",
+            "matches": {
+                "cmd": "sed"
+            },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": {
+                "cmd": "sort"
+            },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": {
+                "cmd": "uniq"
+            },
+            "action": "allow"
+        },
+        {
+            "tool": "Bash",
+            "matches": {
+                "cmd": "python3"
+            },
+            "action": "allow"
+        }
+    ],
+    "makefile.configureOnOpen": false,
+    "redhat.telemetry.enabled": false
+}

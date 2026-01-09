@@ -1,0 +1,12 @@
+bbenoist.nix
+ctf0.macros
+elltg.elltg-npm-script-run
+garaemon.vscode-emacs-tab
+kahole.magit
+llvm-vs-code-extensions.vscode-mlir
+mechatroner.rainbow-csv
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
+shardulm94.trailing-spaces
+tuttieee.emacs-mcx
